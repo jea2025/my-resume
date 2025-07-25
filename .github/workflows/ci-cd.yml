@@ -1,10 +1,10 @@
 name: build push and deploy image
 
 on:
-   push:
-     branches: [main]
-   pull_request:
-      branches: [main]  
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]  
 
 permissions:
   id-token: write
@@ -26,4 +26,4 @@ jobs:
           role-to-assume: ${{ env.AWS_ROLE}}         # OIDC
           aws-region: ${{ env.AWS_REGION}}
       - name: Loging to ecr
-        uses: aws- actions/amazon-ecr-login@v1
+        uses: aws-actions/amazon-ecr-login@v1
